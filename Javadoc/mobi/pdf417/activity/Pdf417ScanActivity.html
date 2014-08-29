@@ -128,7 +128,7 @@
 <li class="blockList">
 <dl>
 <dt>All Implemented Interfaces:</dt>
-<dd>android.content.ComponentCallbacks, android.content.ComponentCallbacks2, android.view.KeyEvent.Callback, android.view.LayoutInflater.Factory, android.view.LayoutInflater.Factory2, android.view.View.OnCreateContextMenuListener, android.view.Window.Callback</dd>
+<dd>android.content.ComponentCallbacks, android.content.ComponentCallbacks2, android.view.KeyEvent.Callback, android.view.LayoutInflater.Factory, android.view.LayoutInflater.Factory2, android.view.View.OnCreateContextMenuListener, android.view.Window.Callback, net.photopay.hardware.camera.ICameraDelegate, net.photopay.hardware.orientation.IOrientationDelegate</dd>
 </dl>
 <hr>
 <br>
@@ -162,7 +162,7 @@ extends <a href="../../../net/photopay/base/BaseBarcodeActivity.html" title="cla
 <!--   -->
 </a>
 <h3>Fields inherited from class&nbsp;net.photopay.base.BaseRecognitionActivity</h3>
-<code>EXTRAS_BEEP_RESOURCE, EXTRAS_LICENSE_KEY, EXTRAS_LICENSE_OWNER, EXTRAS_OPTIMIZE_CAMERA_FOR_NEAR_SCANNING, EXTRAS_ROI, EXTRAS_ROTATE_ROI, EXTRAS_SETTINGS, llIIlIlIIl</code></li>
+<code>EXTRAS_BEEP_RESOURCE, EXTRAS_LICENSE_KEY, EXTRAS_LICENSE_OWNER, EXTRAS_OPTIMIZE_CAMERA_FOR_NEAR_SCANNING, EXTRAS_ROI, EXTRAS_ROTATE_ROI, EXTRAS_SETTINGS, mSettings</code></li>
 </ul>
 <ul class="blockList">
 <li class="blockList"><a name="fields_inherited_from_class_net.photopay.base.BaseCameraActivity">
@@ -254,7 +254,7 @@ extends <a href="../../../net/photopay/base/BaseBarcodeActivity.html" title="cla
 <!--   -->
 </a>
 <h3>Methods inherited from class&nbsp;net.photopay.base.<a href="../../../net/photopay/base/BaseBarcodeActivity.html" title="class in net.photopay.base">BaseBarcodeActivity</a></h3>
-<code><a href="../../../net/photopay/base/BaseBarcodeActivity.html#createRecognitionCallback()">createRecognitionCallback</a>, <a href="../../../net/photopay/base/BaseBarcodeActivity.html#getScanningSettings()">getScanningSettings</a>, <a href="../../../net/photopay/base/BaseBarcodeActivity.html#isProgressBarEnabled()">isProgressBarEnabled</a>, <a href="../../../net/photopay/base/BaseBarcodeActivity.html#onAfterPause()">onAfterPause</a>, <a href="../../../net/photopay/base/BaseBarcodeActivity.html#onBeforeLoadingCamera()">onBeforeLoadingCamera</a>, <a href="../../../net/photopay/base/BaseBarcodeActivity.html#onCreateCameraManager(CameraSettings, net.photopay.hardware.camera.focus.AutofocusStatusView)">onCreateCameraManager</a>, <a href="../../../net/photopay/base/BaseBarcodeActivity.html#onCreateCameraSettings()">onCreateCameraSettings</a>, <a href="../../../net/photopay/base/BaseBarcodeActivity.html#onDecodeExtras(android.os.Bundle)">onDecodeExtras</a>, <a href="../../../net/photopay/base/BaseBarcodeActivity.html#onScanningDone(java.util.ArrayList)">onScanningDone</a>, <a href="../../../net/photopay/base/BaseBarcodeActivity.html#onShouldLoadNativeRecognizer()">onShouldLoadNativeRecognizer</a>, <a href="../../../net/photopay/base/BaseBarcodeActivity.html#pauseScanning()">pauseScanning</a>, <a href="../../../net/photopay/base/BaseBarcodeActivity.html#requireAutofocusFeature()">requireAutofocusFeature</a>, <a href="../../../net/photopay/base/BaseBarcodeActivity.html#resumeScanning()">resumeScanning</a></code></li>
+<code><a href="../../../net/photopay/base/BaseBarcodeActivity.html#createRecognitionCallback()">createRecognitionCallback</a>, <a href="../../../net/photopay/base/BaseBarcodeActivity.html#getScanningSettings()">getScanningSettings</a>, <a href="../../../net/photopay/base/BaseBarcodeActivity.html#isProgressBarEnabled()">isProgressBarEnabled</a>, <a href="../../../net/photopay/base/BaseBarcodeActivity.html#onAfterPause()">onAfterPause</a>, <a href="../../../net/photopay/base/BaseBarcodeActivity.html#onBeforeLoadingCamera()">onBeforeLoadingCamera</a>, <a href="../../../net/photopay/base/BaseBarcodeActivity.html#onCreateCameraManager(net.photopay.hardware.camera.strategy.CameraSettings, net.photopay.hardware.camera.focus.AutofocusStatusView)">onCreateCameraManager</a>, <a href="../../../net/photopay/base/BaseBarcodeActivity.html#onCreateCameraSettings()">onCreateCameraSettings</a>, <a href="../../../net/photopay/base/BaseBarcodeActivity.html#onDecodeExtras(android.os.Bundle)">onDecodeExtras</a>, <a href="../../../net/photopay/base/BaseBarcodeActivity.html#onScanningDone(java.util.ArrayList)">onScanningDone</a>, <a href="../../../net/photopay/base/BaseBarcodeActivity.html#onShouldLoadNativeRecognizer()">onShouldLoadNativeRecognizer</a>, <a href="../../../net/photopay/base/BaseBarcodeActivity.html#pauseScanning()">pauseScanning</a>, <a href="../../../net/photopay/base/BaseBarcodeActivity.html#requireAutofocusFeature()">requireAutofocusFeature</a>, <a href="../../../net/photopay/base/BaseBarcodeActivity.html#resumeScanning()">resumeScanning</a></code></li>
 </ul>
 <ul class="blockList">
 <li class="blockList"><a name="methods_inherited_from_class_net.photopay.base.BaseRecognitionActivity">

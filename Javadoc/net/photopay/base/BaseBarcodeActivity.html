@@ -123,7 +123,7 @@
 <li class="blockList">
 <dl>
 <dt>All Implemented Interfaces:</dt>
-<dd>android.content.ComponentCallbacks, android.content.ComponentCallbacks2, android.view.KeyEvent.Callback, android.view.LayoutInflater.Factory, android.view.LayoutInflater.Factory2, android.view.View.OnCreateContextMenuListener, android.view.Window.Callback</dd>
+<dd>android.content.ComponentCallbacks, android.content.ComponentCallbacks2, android.view.KeyEvent.Callback, android.view.LayoutInflater.Factory, android.view.LayoutInflater.Factory2, android.view.View.OnCreateContextMenuListener, android.view.Window.Callback, net.photopay.hardware.camera.ICameraDelegate, net.photopay.hardware.orientation.IOrientationDelegate</dd>
 </dl>
 <dl>
 <dt>Direct Known Subclasses:</dt>
@@ -208,7 +208,7 @@ extends net.photopay.base.BaseRecognitionActivity</pre>
 <!--   -->
 </a>
 <h3>Fields inherited from class&nbsp;net.photopay.base.BaseRecognitionActivity</h3>
-<code>EXTRAS_BEEP_RESOURCE, EXTRAS_LICENSE_KEY, EXTRAS_LICENSE_OWNER, EXTRAS_OPTIMIZE_CAMERA_FOR_NEAR_SCANNING, EXTRAS_ROI, EXTRAS_ROTATE_ROI, EXTRAS_SETTINGS, llIIlIlIIl</code></li>
+<code>EXTRAS_BEEP_RESOURCE, EXTRAS_LICENSE_KEY, EXTRAS_LICENSE_OWNER, EXTRAS_OPTIMIZE_CAMERA_FOR_NEAR_SCANNING, EXTRAS_ROI, EXTRAS_ROTATE_ROI, EXTRAS_SETTINGS, mSettings</code></li>
 </ul>
 <ul class="blockList">
 <li class="blockList"><a name="fields_inherited_from_class_net.photopay.base.BaseCameraActivity">
@@ -270,7 +270,7 @@ extends net.photopay.base.BaseRecognitionActivity</pre>
 <th class="colLast" scope="col">Method and Description</th>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><code>protected RecognitionCallback</code></td>
+<td class="colFirst"><code>protected net.photopay.recognition.NativeRecognizerWrapper.RecognitionCallback</code></td>
 <td class="colLast"><code><strong><a href="../../../net/photopay/base/BaseBarcodeActivity.html#createRecognitionCallback()">createRecognitionCallback</a></strong>()</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
@@ -303,14 +303,14 @@ extends net.photopay.base.BaseRecognitionActivity</pre>
 </td>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><code>protected CameraManager</code></td>
-<td class="colLast"><code><strong><a href="../../../net/photopay/base/BaseBarcodeActivity.html#onCreateCameraManager(CameraSettings, net.photopay.hardware.camera.focus.AutofocusStatusView)">onCreateCameraManager</a></strong>(CameraSettings&nbsp;settings,
+<td class="colFirst"><code>protected net.photopay.hardware.camera.CameraManager</code></td>
+<td class="colLast"><code><strong><a href="../../../net/photopay/base/BaseBarcodeActivity.html#onCreateCameraManager(net.photopay.hardware.camera.strategy.CameraSettings, net.photopay.hardware.camera.focus.AutofocusStatusView)">onCreateCameraManager</a></strong>(net.photopay.hardware.camera.strategy.CameraSettings&nbsp;settings,
                      <a href="../../../net/photopay/hardware/camera/focus/AutofocusStatusView.html" title="interface in net.photopay.hardware.camera.focus">AutofocusStatusView</a>&nbsp;afsv)</code>
 <div class="block">Called inside onCreate method.</div>
 </td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><code>protected CameraSettings</code></td>
+<td class="colFirst"><code>protected net.photopay.hardware.camera.strategy.CameraSettings</code></td>
 <td class="colLast"><code><strong><a href="../../../net/photopay/base/BaseBarcodeActivity.html#onCreateCameraSettings()">onCreateCameraSettings</a></strong>()</code>
 <div class="block">Called inside onCreate method before creating camera manager.</div>
 </td>
@@ -571,7 +571,7 @@ extends net.photopay.base.BaseRecognitionActivity</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>onCreateCameraSettings</h4>
-<pre>protected final&nbsp;CameraSettings&nbsp;onCreateCameraSettings()</pre>
+<pre>protected final&nbsp;net.photopay.hardware.camera.strategy.CameraSettings&nbsp;onCreateCameraSettings()</pre>
 <div class="block"><strong>Description copied from class:&nbsp;<code><a href="../../../net/photopay/base/BaseCameraActivity.html#onCreateCameraSettings()">BaseCameraActivity</a></code></strong></div>
 <div class="block">Called inside onCreate method before creating camera manager. Use this
  method to create camera settings that are used on each resume event.</div>
@@ -581,20 +581,20 @@ extends net.photopay.base.BaseRecognitionActivity</pre>
 <dt><span class="strong">Returns:</span></dt><dd>Camera factory settings</dd></dl>
 </li>
 </ul>
-<a name="onCreateCameraManager(CameraSettings, net.photopay.hardware.camera.focus.AutofocusStatusView)">
+<a name="onCreateCameraManager(net.photopay.hardware.camera.strategy.CameraSettings, net.photopay.hardware.camera.focus.AutofocusStatusView)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>onCreateCameraManager</h4>
-<pre>protected final&nbsp;CameraManager&nbsp;onCreateCameraManager(CameraSettings&nbsp;settings,
-                                  <a href="../../../net/photopay/hardware/camera/focus/AutofocusStatusView.html" title="interface in net.photopay.hardware.camera.focus">AutofocusStatusView</a>&nbsp;afsv)</pre>
-<div class="block"><strong>Description copied from class:&nbsp;<code><a href="../../../net/photopay/base/BaseCameraActivity.html#onCreateCameraManager(CameraSettings, net.photopay.hardware.camera.focus.AutofocusStatusView)">BaseCameraActivity</a></code></strong></div>
+<pre>protected final&nbsp;net.photopay.hardware.camera.CameraManager&nbsp;onCreateCameraManager(net.photopay.hardware.camera.strategy.CameraSettings&nbsp;settings,
+                                                               <a href="../../../net/photopay/hardware/camera/focus/AutofocusStatusView.html" title="interface in net.photopay.hardware.camera.focus">AutofocusStatusView</a>&nbsp;afsv)</pre>
+<div class="block"><strong>Description copied from class:&nbsp;<code><a href="../../../net/photopay/base/BaseCameraActivity.html#onCreateCameraManager(net.photopay.hardware.camera.strategy.CameraSettings, net.photopay.hardware.camera.focus.AutofocusStatusView)">BaseCameraActivity</a></code></strong></div>
 <div class="block">Called inside onCreate method. This method should build appropriate
  camera manager for camera preview.</div>
 <dl>
 <dt><strong>Specified by:</strong></dt>
-<dd><code><a href="../../../net/photopay/base/BaseCameraActivity.html#onCreateCameraManager(CameraSettings, net.photopay.hardware.camera.focus.AutofocusStatusView)">onCreateCameraManager</a></code>&nbsp;in class&nbsp;<code><a href="../../../net/photopay/base/BaseCameraActivity.html" title="class in net.photopay.base">BaseCameraActivity</a></code></dd>
+<dd><code><a href="../../../net/photopay/base/BaseCameraActivity.html#onCreateCameraManager(net.photopay.hardware.camera.strategy.CameraSettings, net.photopay.hardware.camera.focus.AutofocusStatusView)">onCreateCameraManager</a></code>&nbsp;in class&nbsp;<code><a href="../../../net/photopay/base/BaseCameraActivity.html" title="class in net.photopay.base">BaseCameraActivity</a></code></dd>
 <dt><span class="strong">Parameters:</span></dt><dd><code>settings</code> - camera settings as returned by onCreateCameraFactorySettings</dd><dd><code>afsv</code> - Interface for handling camera focus events.</dd>
 <dt><span class="strong">Returns:</span></dt><dd>Appropriate camera manager.</dd></dl>
 </li>
@@ -751,7 +751,7 @@ extends net.photopay.base.BaseRecognitionActivity</pre>
 <ul class="blockListLast">
 <li class="blockList">
 <h4>createRecognitionCallback</h4>
-<pre>protected final&nbsp;RecognitionCallback&nbsp;createRecognitionCallback()</pre>
+<pre>protected final&nbsp;net.photopay.recognition.NativeRecognizerWrapper.RecognitionCallback&nbsp;createRecognitionCallback()</pre>
 <dl>
 <dt><strong>Specified by:</strong></dt>
 <dd><code>createRecognitionCallback</code>&nbsp;in class&nbsp;<code>net.photopay.base.BaseRecognitionActivity</code></dd>
