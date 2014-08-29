@@ -51,6 +51,9 @@ public class Pdf417CustomUIDemo extends Activity {
             sett.setDontShowDialog(true);
             // put settings as intent extra
             intent.putExtra(BaseBarcodeActivity.EXTRAS_SETTINGS, sett);
+
+            net.photopay.util.Log.setLogLevel(net.photopay.util.Log.LogLevel.LOG_VERBOSE);
+            net.photopay.util.Log.enableFileLogging();
             startActivityForResult(intent, MY_REQUEST_CODE);
             break;
         }
@@ -70,6 +73,9 @@ public class Pdf417CustomUIDemo extends Activity {
             sett.setRemoveOverlayEnabled(true);
             // put settings as intent extra
             intent.putExtra(BaseBarcodeActivity.EXTRAS_SETTINGS, sett);
+
+            net.photopay.util.Log.setLogLevel(net.photopay.util.Log.LogLevel.LOG_VERBOSE);
+            net.photopay.util.Log.enableFileLogging();
             startActivityForResult(intent, MY_REQUEST_CODE);
             break;
         }
@@ -86,6 +92,9 @@ public class Pdf417CustomUIDemo extends Activity {
             sett.setQrCodeEnabled(true);
             // put settings as intent extra
             intent.putExtra(BaseBarcodeActivity.EXTRAS_SETTINGS, sett);
+
+            net.photopay.util.Log.setLogLevel(net.photopay.util.Log.LogLevel.LOG_VERBOSE);
+            net.photopay.util.Log.enableFileLogging();
             startActivityForResult(intent, MY_REQUEST_CODE);
             break;
         }
@@ -122,6 +131,8 @@ public class Pdf417CustomUIDemo extends Activity {
             // change event occurs
             intent.putExtra(BaseBarcodeActivity.EXTRAS_ROTATE_ROI, true);
 
+            net.photopay.util.Log.setLogLevel(net.photopay.util.Log.LogLevel.LOG_VERBOSE);
+            net.photopay.util.Log.enableFileLogging();
             startActivityForResult(intent, MY_REQUEST_CODE);
             break;
         }
@@ -133,6 +144,7 @@ public class Pdf417CustomUIDemo extends Activity {
      */
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        net.photopay.util.Log.disableFileLogging();
         if (requestCode == MY_REQUEST_CODE && resultCode == BaseBarcodeActivity.RESULT_OK) {
             // read scan result
             Pdf417MobiScanData scanData = data.getParcelableExtra(BaseBarcodeActivity.EXTRAS_RESULT);

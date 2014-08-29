@@ -147,6 +147,9 @@ public class Pdf417MobiDemo extends Activity {
         // put settings as intent extra
         intent.putExtra(Pdf417ScanActivity.EXTRAS_SETTINGS, sett);
 
+        net.photopay.util.Log.setLogLevel(net.photopay.util.Log.LogLevel.LOG_VERBOSE);
+        net.photopay.util.Log.enableFileLogging();
+
         // Start Activity
         startActivityForResult(intent, MY_REQUEST_CODE);
     }
@@ -173,6 +176,7 @@ public class Pdf417MobiDemo extends Activity {
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        net.photopay.util.Log.disableFileLogging();
         if (requestCode == MY_REQUEST_CODE && resultCode == BaseBarcodeActivity.RESULT_OK) {
             // obtain scan results
             ArrayList<Pdf417MobiScanData> scanDataList = data.getParcelableArrayListExtra(BaseBarcodeActivity.EXTRAS_RESULT_LIST);
